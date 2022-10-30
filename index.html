@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Orbitron:wght@800&display=swap"
+		rel="stylesheet">
+
+	<link rel="stylesheet" href="/css/clearFix.css">
+	<link href="/css/odometer.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/styles.css">
+
+	<link rel="icon" type="image/png" href="/favicon.png" />
+</head>
+
+<body>
+	<main class="main">
+		<div class="my-date md">
+			<div class="md-box md-box_greetings">
+				<div class="greetings md_container">you are <br> in <br> numbers</div>
+			</div>
+			<div class="md-box md-box_m">
+				<div class="m md_container" data-bg-value="minutes"></div>
+			</div>
+			<div class="md-box md-box_months">
+				<div class="months md_container" data-bg-value="months"></div>
+			</div>
+
+			<div class="md-box md-box_week">
+				<div class="week md_container" data-bg-value="weeks"></div>
+			</div>
+			<div class="md-box md-box_s">
+				<div class="s md_container odometer" data-bg-value="seconds">
+					<!-- odometer -->
+				</div>
+			</div>
+			<div class="md-box md-box_day">
+				<div class="day md_container" data-bg-value="days"></div>
+			</div>
+
+			<div class="md-box md-box_years">
+				<div class="years md_container" data-bg-value="years"></div>
+			</div>
+			<div class="md-box md-box_h">
+				<div class="h md_container" data-bg-value="hours"></div>
+			</div>
+			<div class="md-box md-form">
+				<div class="form md_container" id="time-form">
+					<input id="form-date" type="date" name="" id="" value="2018-01-22">
+					<input id="form-time" type="time" name="" id="" value="00:00">
+					<button id="calculate">Calculate</button>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+	<script src="/js/odometer.js"></script>
+	<script src="/js/moment.js"></script>
+	<script src="/js/main.js"></script>
+
+</body>
+
+</html>
