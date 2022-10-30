@@ -5,7 +5,7 @@
 
 .main {
 	color: rgb(0, 0, 0);
-	background: url(/img/img1.webp);
+	background: url(../img/img1.webp);
 	box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, .05);
 	background-repeat: repeat;
 }
