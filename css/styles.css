@@ -156,15 +156,15 @@
 	}
 
 	.md_container {
-		font-size: clamp(1em, 4rem, 50px);
+		font-size: clamp(1em, 3rem, 50px);
 	}
 
 	.md_container.s {
-		font-size: clamp(1em, 2.5em, 50px);
+		font-size: clamp(1em, 2.3em, 50px);
 	}
 
 	.md_container::before {
-		font-size: clamp(1em, 5rem, 80px);
+		font-size: clamp(1em, 4.5rem, 80px);
 	}
 
 	.md-form {

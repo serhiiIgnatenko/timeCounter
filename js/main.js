@@ -10,7 +10,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	let months = myDate.querySelector('.months');
 	let year = myDate.querySelector('.years');
 
-	let startDate = new Date(0);
+	// let startDate = new Date(0);
+	let startDate;
+
+	if (localStorage.getItem('myDate')) {
+		startDate = new Date(localStorage.getItem('myDate'));
+		let startDay = formatNumber(startDate.getDate());
+		let startMonth = formatNumber(startDate.getMonth() + 1);
+		let startHours = startDate.getHours();
+		let startMinuts = startDate.getMinutes();
+
+		document.querySelector('#form-date').value = `${startDate.getFullYear()}-${startMonth}-${startDay}`;
+		document.querySelector('#form-time').value = `${formatNumber(startHours)}:${formatNumber(startMinuts)}`;
+	} else {
+		startDate = new Date(0)
+		let startDay = formatNumber(new Date().getDate());
+		let startMonth = formatNumber(new Date().getMonth() + 1);
+		document.querySelector('#form-date').value = `${new Date().getFullYear()}-${startMonth}-${startDay}`;
+	};
+
+	function formatNumber(num) {
+		if (num < 9) {
+			return `0${num}`
+		} else {
+			return num;
+		}
+	};
 
 
 	function countTime() {
@@ -36,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		year.textContent = yearValue;
 
 		setTimeout(countTime, 1000)
-	}
+	};
 
 	function dateSettings(start, end, setting = '') {
 		return end.diff(start, setting);
@@ -52,11 +77,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		let date = form.querySelector('#form-date').value;
 		let time = form.querySelector('#form-time').value;
 		startDate = new Date(Date.parse(`${date}T${time}`));
+		localStorage.setItem('myDate', startDate);
 	};
-
-	document.querySelector('#form-date').value = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`;
-
-
-
 
 });
